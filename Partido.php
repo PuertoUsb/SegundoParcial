@@ -90,13 +90,41 @@ public function __toString(){
         $cadena = $cadena."\n"."--------------------------------------------------------"."\n";
         $cadena = $cadena. "<Equipo 1> "."\n".$this->getObjEquipo1()."\n";
         $cadena = $cadena. "Cantidad Goles E1: ".$this->getCantGolesE1()."\n";
-          $cadena = $cadena. "\n"."--------------------------------------------------------"."\n";
-         $cadena = $cadena. "\n"."--------------------------------------------------------"."\n";
+        $cadena = $cadena. "\n"."--------------------------------------------------------"."\n";
+        $cadena = $cadena. "\n"."--------------------------------------------------------"."\n";
         $cadena = $cadena. "<Equipo 2> "."\n".$this->getObjEquipo2()."\n";
         $cadena = $cadena. "Cantidad Goles E2: ".$this->getCantGolesE2()."\n";
-         $cadena = $cadena. "\n"."--------------------------------------------------------"."\n";
+        $cadena = $cadena. "\n"."--------------------------------------------------------"."\n";
         return $cadena;
     }
+
+    public function darEquipoGanador(){
+        $equipoGanador = [];
+        if ($this->getCantGolesE1() > $this->getCantGolesE2()){
+            $equipoGanador[] = $this->getObjEquipo1();
+
+        }else if ($this->getCantGolesE1() < $this->getCantGolesE2()){
+            $equipoGanador[] = $this->getObjEquipo2();
+        } else {
+            $equipoGanador[] = $this->getObjEquipo1();
+            $equipoGanador[] = $this->getObjEquipo2();
+
+        }
+        return $equipoGanador;
+}
+
+public function coeficientePartido(){
+    $objEquipo1 = $this->getObjEquipo1();
+    $objEquipo2 = $this->getObjEquipo2();
+    $coeficienteBase = $this->getCoefBase();
+    $coeficiente = $coeficienteBase * ($this->getCantGolesE1() + $this->getCantGolesE2()) * ($objEquipo1->getCantJugadores() + $objEquipo2->getCantJugadores());
+    
+    return $coeficiente;
+}
+
+
+
+
 }
 
 

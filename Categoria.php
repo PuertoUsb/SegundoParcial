@@ -1,5 +1,5 @@
 <?php
-class Categoria{
+class Categoria extends Equipo{
 	private $idcategoria;
 	private $descripcion;
 	 

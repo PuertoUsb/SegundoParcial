@@ -6,6 +6,35 @@ include_once("Partido.php");
 include_once("Fotbool.php");
 include_once("Basket.php");
 
+$objTorneo = new Torneo([], 100000 , null);
+
+$objBasquet1= new Basquet(11, "2024-05-05", $objE7, 80, $objE8, 120, 7);
+$objBasquet2= new Basquet(12, "2024-05-06", $objE9, 81, $objE10, 110, 8);
+$objBasquet3= new Basquet(13, "2024-05-07", $objE11, 115, $objE12, 85, 9);
+
+$objFutbol = new Futbol(14, "2024-05-07", $objE1, 3, $objE2, 2);
+$objFutbo2 = new Futbol(15, "2023-05-08", $objE3, 0, $objE4,1);
+$objFutbo2=  new Futbol(16, "2024-05-09", $objE5, 2, $objE6, 3);
+
+$ingresarPartido1 = $objTorneo->ingresarPartido($objE5, $objE11, '2024-05-23', 'Futbol');
+echo $ingresarPartido1 . "\n";
+
+$ingresarPartido2 = $objTorneo->ingresarPartido($objE11, $objE11, '2024-05-23', 'basquetbol');
+echo $ingresarPartido2. "\n";
+
+$ingresarPartido3 = $objTorneo->ingresarPartido($objE9, $objE10, '2024-05-25', 'basquetbol');
+echo $ingresarPartido3. "\n";
+
+$darGanadores1 = $objTorneo->darGanadores("basquet");
+echo $darGanadores. "\n";
+
+$darGanadores2 = $objTorneo->darGanadores("basquet");
+echo $darGanadores2."\n";
+echo $objTorneo;
+
+
+
+
 $catMayores = neW Categoria(1,'Mayores');
 $catJuveniles = neW Categoria(2,'juveniles');
 $catMenores = neW Categoria(1,'Menores');
