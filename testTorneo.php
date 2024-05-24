@@ -1,10 +1,9 @@
 <?php
-include_once("Categoria.php");
-include_once("Torneo.php");
-include_once("Equipo.php");
-include_once("Partido.php");
-include_once("Fotbool.php");
-include_once("Basket.php");
+include_once("./Torneo.php");
+include_once("./Equipo.php");
+include_once("./Partido.php");
+include_once("./Futbol.php");
+include_once("./Basquet.php");
 
 $objTorneo = new Torneo([], 100000 , null);
 
