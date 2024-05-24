@@ -1,5 +1,5 @@
 <?php
-class Equipo extends Partido {
+class Equipo {
 	private $nombre;
 	private $capitan;
 	private $cantJugadores;
